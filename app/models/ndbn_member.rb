@@ -15,6 +15,8 @@ class NDBNMember < ApplicationRecord
   validates :account_name, presence: true
   validates :ndbn_member_id, uniqueness: true
 
+  scope :alphabetized, -> { order(:account_name) }
+
   def full_name
     "#{ndbn_member_id} - #{account_name}"
   end

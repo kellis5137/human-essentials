@@ -64,7 +64,7 @@
                 <% end %>
                 <%= f.input :ndbn_member, label: "NDBN membership ID", wrapper: :input_group do %>
                   <div class="mb-n3"> <%# Removes "margin-bottom: 1rem" added by "form-group" class below %>
-                    <%= f.association :ndbn_member, label_method: :full_name, value_method: :id, label: false %>
+                    <%= f.association :ndbn_member, collection: NDBNMember.alphabetized, label_method: :full_name, value_method: :id, label: false %>
                   </div>
                 <% end %>
                 <%= f.input :url, label: "URL", wrapper: :input_group do %>
